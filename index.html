@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTP Bracelets | Trang Sức Vòng Tay Thủ Công Tinh Tế</title>
+  <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+  <div class="top-bar">
+    Đồng giá ưu đãi chỉ từ <span>35.000₫ – 40.000₫</span> • Freeship toàn quốc khi mua từ 3 vòng tay
+  </div>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">NTP <span>BRACELETS</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Trang chủ</a></li>
+        <li><a href="products.html" >Bộ sưu tập (20)</a></li>
+        <li><a href="about.html" >Câu chuyện & Đo size</a></li>
+        <li><a href="contact.html" >Thiết kế riêng & Liên hệ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="openCartDrawer()" aria-label="Mở giỏ hàng">
+          🛍️ Giỏ hàng <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-tag">Bộ Sưu Tập Thủ Công 2026</span>
+        <h1>Vẻ Đẹp Tinh Tế Trên Từng Cổ Tay</h1>
+        <p>Khám phá 20 thiết kế vòng tay đan thủ công, hạt ngọc trai pastel và đá thiên nhiên với mức giá học sinh – sinh viên chỉ từ 35.000₫ – 40.000₫.</p>
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn btn-primary">Xem 20 mẫu vòng tay</a>
+          <a href="about.html" class="btn btn-outline">Cách đo size cổ tay</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="Images/hero-banner.png" alt="Bộ sưu tập vòng tay NTP Bracelets">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <h2>Bộ Sưu Tập 20 Mẫu Vòng Tay</h2>
+        <p>Tất cả sản phẩm đều được chụp ảnh thật, đan tay tỉ mỉ và điều chỉnh kích thước linh hoạt theo cổ tay của bạn.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-pills">
+          <button class="filter-btn active" data-category="Tất cả">Tất cả (20)</button>
+          <button class="filter-btn" data-category="Vòng Dây Đan Handmade">Dây Đan Handmade</button>
+          <button class="filter-btn" data-category="Vòng Hạt & Ngọc Trai">Hạt & Ngọc Trai</button>
+          <button class="filter-btn" data-category="Vòng Đá Thiên Nhiên">Đá Thiên Nhiên</button>
+        </div>
+        <div class="toolbar-controls">
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm mẫu vòng tay...">
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Sắp xếp: Mặc định</option>
+            <option value="price-asc">Giá: Thấp đến Cao</option>
+            <option value="price-desc">Giá: Cao đến Thấp</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cam Kết Chất Lượng Từ NTP</h2>
+        <p>Mỗi chiếc vòng tay đều được kiểm tra nút thắt, charm và đóng gói chỉn chu trước khi giao đến bạn.</p>
+      </div>
+      <div class="info-grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">✦</div>
+          <h3>Ảnh Thật 100%</h3>
+          <p>Toàn bộ hình ảnh sản phẩm được chụp trực tiếp từ mẫu vòng thủ công tại studio của NTP.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❖</div>
+          <h3>Đan Tay Tỉ Mỉ</h3>
+          <p>Dây sáp và dây lụa bền màu, chống thấm nhẹ, nút rút chắc chắn vừa vặn mọi kích cỡ cổ tay.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">♻</div>
+          <h3>Giá Hạt Dẻ 35k–40k</h3>
+          <p>Mức giá siêu yêu thương dành cho học sinh – sinh viên, tặng kèm túi nhung khi mua từ 2 sản phẩm.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="backdrop" id="globalBackdrop" onclick="closeAllModals()"></div>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true">
+    <div class="modal-grid">
+      <div class="modal-img">
+        <img id="modalImg" src="Images/bracelet-01.png" alt="Chi tiết vòng tay">
+      </div>
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeAllModals()" aria-label="Đóng">✕</button>
+        <div class="product-cat" id="modalCat">Vòng Dây Đan Handmade</div>
+        <h2 id="modalTitle" style="font-size:1.75rem; margin-bottom:8px;">Tên sản phẩm</h2>
+        <div id="modalPrice" style="font-size:1.25rem; font-weight:700; color:var(--gold); margin-bottom:12px;">38.000₫</div>
+        <p id="modalDesc" style="font-size:0.92rem; color:var(--text-muted); margin-bottom:10px;"></p>
+        <p style="font-size:0.86rem; margin-bottom:14px;"><strong>Chất liệu:</strong> <span id="modalMaterial"></span></p>
+        <div>
+          <strong style="font-size:0.88rem;">Chọn kích thước cổ tay:</strong>
+          <div class="size-options">
+            <button type="button" class="size-chip" data-size="15cm">15cm</button>
+            <button type="button" class="size-chip active" data-size="16cm">16cm</button>
+            <button type="button" class="size-chip" data-size="17cm">17cm</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="modalAddToCart" style="width:100%;">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hàng">
+    <div class="cart-header">
+      <h3 style="font-size:1.5rem;">Giỏ hàng của bạn</h3>
+      <button class="close-btn" style="position:static;" onclick="closeAllModals()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Tổng thanh toán:</span>
+        <span id="cartTotal" style="color:var(--gold);">0₫</span>
+      </div>
+      <form id="checkoutForm">
+        <div class="form-group" style="margin-bottom:10px;">
+          <input type="text" id="custName" class="form-control" placeholder="Họ và tên người nhận" required>
+        </div>
+        <div class="form-group" style="margin-bottom:10px;">
+          <input type="tel" id="custPhone" class="form-control" placeholder="Số điện thoại nhận hàng" required>
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <select id="payMethod" class="form-control">
+            <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+            <option value="BANK">Chuyển khoản ngân hàng / QR</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Xác nhận đặt hàng</button>
+      </form>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>NTP BRACELETS</h3>
+          <p style="font-size:0.9rem; max-width:340px;">Chế tác thủ công vòng tay dây đan nghệ thuật, đá thiên nhiên và hạt ngọc trai pastel mang dấu ấn riêng của bạn.</p>
+        </div>
+        <div>
+          <h4>Điều hướng nhanh</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="products.html">Bộ sưu tập 20 vòng tay</a></li>
+            <li><a href="about.html">Hướng dẫn đo size cổ tay</a></li>
+            <li><a href="contact.html">Đặt thiết kế theo yêu cầu</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Chính sách & Hỗ trợ</h4>
+          <ul>
+            <li>Bảo hành thay dây miễn phí trọn đời</li>
+            <li>Đổi size cổ tay trong vòng 7 ngày</li>
+            <li>Hotline: 0785323875 (8:30 – 21:30)</li>
+            <li>Showroom: 36 đường 36 tỉnh 36</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Scripts/main.js"></script>
+</body>
+</html>
